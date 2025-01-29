@@ -22,8 +22,7 @@ function App() {
       } else if (event.data === "showui") {
         console.log("Showing UI");
         setHidden(false);
-      } else 
-      {
+      } else {
         console.error("Ooops, what u tryna do...");
       }
     };
@@ -32,12 +31,11 @@ function App() {
       if (event.key === "Escape") {
         setHidden(true);
       }
-    }
+    };
 
-    function removeEventListeners()
-    {
-      window.removeEventListener("message", handleHideUI)
-      window.removeEventListener("keyup", handleKeyUp)
+    function removeEventListeners() {
+      window.removeEventListener("message", handleHideUI);
+      window.removeEventListener("keyup", handleKeyUp);
     }
 
     window.addEventListener("keyup", handleKeyUp); // THIS ADDS THE EVENT LISTENER
@@ -47,14 +45,16 @@ function App() {
 
   return (
     <div className={`background ${hidden ? "" : "visible"}`}>
-      <div className="grid_container">
-        <Shop />
-        <Discord />
-        <Safezone />
-        <Settings />
-        <GTASettings />
-        <Report />
-      </div>
+      {!hidden && (
+        <div className="grid_container">
+          <Shop />
+          <Discord />
+          <Safezone />
+          <Settings />
+          <GTASettings />
+          <Report />
+        </div>
+      )}
     </div>
   );
 }
