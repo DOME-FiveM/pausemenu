@@ -35,7 +35,6 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
   border-radius: 4px;
   width: 350px;
@@ -48,7 +47,6 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
 }
 .grid_bottom {
@@ -242,12 +240,12 @@ h2 {
 
 
 .username > h1 {
+  padding-inline: 10px;
   overflow-x: scroll;
   overflow-y: hidden;
   text-wrap: nowrap;
   text-align: left;
   align-items: left;
-  justify-content: start;
 }
 
 .stat {
@@ -255,11 +253,14 @@ h2 {
   height: 4.5vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: 15px;
-  float: left;
-  text-align: right;
   text-overflow: ellipsis;
+  padding-inline: 10px;
+  text-wrap: nowrap;
+  overflow-y: hidden;
+}
+.wrap {
+  justify-content: center !important; /* When wrapped, center content */
 }
 
 .stat:nth-last-child(1) {
@@ -274,7 +275,6 @@ h2 {
   height: 4.5vh;
   display: flex;
   flex-direction: row;
-  justify-content: start;
   align-items: center;
   background: linear-gradient(90deg, rgba(46, 46, 46, 0.7), rgba(76, 76, 76, 0.3));
 
@@ -303,7 +303,6 @@ h2 {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: start;
 }
 .discord_link >svg{
   width: 25px;
