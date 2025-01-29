@@ -13,7 +13,7 @@ function Statistics() {
             <div className="spacer"></div>
             <h1>User Name</h1>
           </div>
-          <h1 className="stat_info">A ReallY LONG NAME ADAD 313113 123 3123132dadaA</h1>
+          <h1 id = "username" className="stat_info">A ReallY LONG NAME ADAD 313113 123 3123132dadaA</h1>
         </div>
 
         {/* account id */}
@@ -22,7 +22,7 @@ function Statistics() {
             <div className="spacer"></div>
             <h1>Account ID</h1>
           </div>
-          <h1 className="stat_info">0</h1>
+          <h1 id ="account_id" className="stat_info">0</h1>
         </div>
 
         <div className="actual_stat_container">
@@ -30,7 +30,7 @@ function Statistics() {
             <div className="spacer"></div>
             <h1>Play Time</h1>
           </div>
-          <h1 className="stat_info">0h</h1>
+          <h1 id="playtime" className="stat_info">0h</h1>
         </div>
 
         <div className="actual_stat_container">
@@ -38,7 +38,7 @@ function Statistics() {
             <div className="spacer"></div>
             <h1>Kills</h1>
           </div>
-          <h1 className="stat_info">312222222222222222222222220</h1>
+          <h1 id = "kills" className="stat_info">312222222222222222222222220</h1>
         </div>
       </div>
     </>

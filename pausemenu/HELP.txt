@@ -1,2 +1,2 @@
-window.postMessage("showui", "*");
-window.postMessage("hideui", "*");
+window.postMessage({type: "showui"}, "*");
+window.postMessage({type: "hideui"}, "*");
