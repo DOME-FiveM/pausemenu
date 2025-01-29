@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+  text-transform: uppercase;
+  cursor: default;
+  user-select: none;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  font-size: 11px;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  overflow: hidden;
+}
+
+.grid_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7e7e7e;
+  text-align: center;
+  border-radius: 5px;
+  width: 350px;
+  overflow: hidden;
+  width: 400px;
+}
+
+.a_tab {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.grid_bottom {
+  height: 350px;
+}
+
+.grid_top {
+  height: 500px;
+}
+
+.split_grid_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #7e7e7e;
+  text-align: center;
+  border-radius: 5px;
+  width: 350px;
+  overflow: hidden;
+  padding: 18px;
+  width: 400px;
+  height: 275px;
+  gap: 5px;
+}
+
+.split_grid_bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #7e7e7e;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  width: 350px;
+  overflow: hidden;
+  padding: 25px;
+  width: 400px;
+  height: 215px;
+}
+
+#shop_tab {
+  background: linear-gradient(0deg, rgba(176, 60, 14, 0.601), rgba(192, 32, 21, 0.568)), 
+              url("https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/04/gta-5-fivem-player-count.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: color-burn; /* You can try overlay, darken, etc. */
+}
+
+#discord_tab {
+  background: linear-gradient(0deg, #000000c9, #2e3a72);
+}
+#safezone_tab {
+  background: linear-gradient(0deg, #000000c9, #1a4d6c);
+}
+#settings_tab {
+  background: linear-gradient(0deg, #000000c9, #411b6d);
+}
+#gta_settings_tab {
+  background: linear-gradient(0deg, #000000c9, #154d43);
+}
+#report_tab {
+  background: linear-gradient(0deg, #000000c9, #771c1c);
+}
+
+
+.icon {
+  background-color: rgb(255, 255, 255);
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.icon_background {
+  background-color: rgb(162, 162, 162);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  rotate: 45deg;
+  margin-top: 15px;
+  /* scale: 0.9; */
+}
+
+.icon > svg {
+  padding: 2px;
+  transform: rotate(-45deg);
+}
+
+.report_icon {
+  background-color: rgba(206, 0, 0, 0.2);
+  border: 2px solid rgba(206, 0, 0, 0.1);
+}
+.report_icon_background {
+  background-color: rgba(206, 0, 0, 0.1);
+  border: 1px solid rgba(206, 0, 0, 0.2);
+}
+
+.safezone_icon {
+  background-color: rgba(0, 151, 206, 0.1);
+  border: 1px solid rgba(0, 151, 206, 0.2);
+}
+.safezone_icon_background {
+  background-color: rgba(0, 151, 206, 0.2);
+  border: 1px solid rgba(0, 151, 206, 0.1);
+}
+
+.gta_settings_icon {
+  background-color: rgba(0, 206, 165, 0.2);
+  border: 2px solid rgba(0, 206, 165, 0.1);
+}
+.gta_settings_icon_background {
+  background-color: rgba(0, 206, 165, 0.1);
+  border: 1px solid rgba(0, 206, 165, 0.2);
+}
+
+.settings_icon {
+  background-color: rgba(130, 0, 206, 0.2);
+  border: 1px solid rgba(130, 0, 206, 0.1);
+}
+.settings_icon_background {
+  background-color: rgba(130, 0, 206, 0.1);
+  border: 1px solid rgba(130, 0, 206, 0.2);
+}
+
+.shop_icon {
+  background-color: rgba(206, 82, 0.2, 0.2);
+  border: 2px solid rgba(206, 82, 0.1, 0.1);
+  background-size: contain;
+}
+.shop_icon_background {
+  background-color: rgba(206, 82, 0.2, 0.1);
+  border: 2px solid rgba(206, 82, 0.2, 0.2);
+}
+
+
+
+.tab_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stats_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  float: left;
+  width: 100%;
+}
+
+.split_grid_spacer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.a_stat {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+
+
+.stat {
+  width: 50%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 15px;
+}
+
+.stat:nth-last-child(1) {
+  background: linear-gradient(90deg, rgba(46, 46, 46, 0.7), rgba(76, 76, 76, 0.3));
+}
+.stat:nth-child(2) {
+  background: linear-gradient(-90deg, rgba(46, 46, 46, 0.7), rgba(71, 71, 71, 0.45));
+}
+
+.spacer {
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  background-color: rgb(128, 255, 0);
+  margin-left: 5px;
+}
+
+.discord_link {
+  background-color: rgba(46, 46, 46, 0.29);
+  border-radius: 3px;
+  padding: 13px;
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.discord_link >svg{
+  width: 25px;
+  height: 25px;
+  rotate: 90deg;
+  fill: rgba(191, 191, 191, 0.75);
+  background-color: rgba(128, 128, 128, 0.55);
+  padding: 4px;
+  border-radius: 5px;
+}
+.join_discord {
+  background-color: rgb(127, 110, 255);
+  border-radius: 3px;
+  padding-inline: 25px;
+  padding-block: 10px;
+  width: 100%;
+}
+.join_discord>h1 {
+font-size: 15px;
+}
+
+.discord_stuff {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.top_icon_trans {
+  position: absolute;
+  opacity: 0.1;
+  overflow: hidden;
+}
+.top_icon_trans >div {
+  position: static;
+  margin-top: -14vh;
+}
