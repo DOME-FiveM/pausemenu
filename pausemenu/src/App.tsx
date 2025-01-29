@@ -1,6 +1,12 @@
+// Import required React stuff
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
+// Import CSS
 import "./App.css";
 import "./Scrollbar.css";
 
+// Import Modules
 import Report from "./Report";
 import GTASettings from "./GTASettings";
 import Settings from "./Settings";
@@ -21,4 +27,8 @@ function App() {
   );
 }
 
-export default App;
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)

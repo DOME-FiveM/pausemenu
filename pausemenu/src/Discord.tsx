@@ -7,7 +7,7 @@ function Discord() {
       <div className="split_grid_spacer">
         <Statistics />
         <div id="discord_tab" className="split_grid_bottom">
-          <div className="tab_desc">
+          <div className="grid_item_desc">
             <h1>Our Discord</h1>
             <h2>Join our official Discord server</h2>
           </div>
