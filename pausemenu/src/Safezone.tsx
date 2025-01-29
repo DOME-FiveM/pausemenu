@@ -1,6 +1,13 @@
+import FiveM from "./FiveM";
+
 function Safezone() {
   return (
-    <div id="safezone_tab" className="grid_item grid_top">
+    <div 
+    onClick={() => FiveM({
+      id: "safezone",
+      label: "Safezone",
+    })}
+    id="safezone_tab" className="grid_item grid_top">
       <div className="top_icon_trans_safezone">
         <div>
           <svg
