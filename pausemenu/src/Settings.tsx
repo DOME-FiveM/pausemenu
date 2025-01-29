@@ -2,12 +2,16 @@ import FiveM from "./FiveM";
 
 function Settings() {
   return (
-    <div 
-    onClick={() => FiveM({
-      id: "settings",
-      label: "Settings"
-    })}
-    id="settings_tab" className="grid_item grid_bottom">
+    <div
+      onClick={() =>
+        FiveM({
+          id: "settings",
+          label: "Settings",
+        })
+      }
+      id="settings_tab"
+      className="grid_item grid_bottom"
+    >
       <div className="top_icon_trans">
         <div>
           <svg

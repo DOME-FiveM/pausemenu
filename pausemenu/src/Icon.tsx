@@ -1,7 +1,7 @@
 function Icon() {
-    return (
-        <div id="report_tab" className="grid_item grid_bottom">
-        <div className="icon_background report_icon_background">
+  return (
+    <div id="report_tab" className="grid_item grid_bottom">
+      <div className="icon_background report_icon_background">
         <div className="icon report_icon">
           <svg
             width="43"
@@ -18,12 +18,12 @@ function Icon() {
             />
           </svg>
         </div>
-        </div>
-
-        <h1>Report</h1>
-        <h2>Report a player or any issue to the staff team</h2>
       </div>
-    )
+
+      <h1>Report</h1>
+      <h2>Report a player or any issue to the staff team</h2>
+    </div>
+  );
 }
 
 export default Icon;

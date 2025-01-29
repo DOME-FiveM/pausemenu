@@ -1,6 +1,6 @@
 // Import required React stuff
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
 // Import CSS
 import "./App.css";
@@ -17,18 +17,18 @@ import Shop from "./Shop";
 function App() {
   return (
     <div className="grid_container">
-      <Shop/>
-      <Discord/>
-      <Safezone/>
-      <Settings/>
-      <GTASettings/>
-      <Report/>
+      <Shop />
+      <Discord />
+      <Safezone />
+      <Settings />
+      <GTASettings />
+      <Report />
     </div>
   );
 }
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);
