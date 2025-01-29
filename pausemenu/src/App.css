@@ -102,8 +102,7 @@ h2 {
   border-radius: 5px;
   padding: 18px;
   gap: var(--global-gap);
-  overflow: hidden;
-  width: 100%;
+  width: var(--item-width);
   height: 50%;
 }
 
@@ -117,7 +116,7 @@ h2 {
   border-radius: 5px;
   overflow: hidden;
   padding: 25px;
-  width: 100%;
+  width: var(--item-width);
   height: 50%;
 }
 
@@ -243,7 +242,7 @@ h2 {
   gap: 5px;
 }
 
-.a_stat {
+.actual_stat_container {
   width: 100%;
   display: flex;
   align-items: center;
@@ -252,35 +251,25 @@ h2 {
   overflow: hidden;
 }
 
-.username > h1 {
-  padding-inline: 10px;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  text-wrap: nowrap;
-  text-align: left;
-  align-items: left;
-}
-
-.stat {
+.stat_info {
   width: 50%;
   height: 4.5vh;
   display: flex;
   align-items: center;
   font-size: 15px;
-  text-overflow: ellipsis;
-  padding-inline: 10px;
-  text-wrap: nowrap;
   overflow-y: hidden;
+  text-wrap: nowrap;
+  padding-inline: 10px;
 }
 
-.stat:nth-last-child(1) {
+.stat_info:nth-last-child(1) {
   background: linear-gradient(
     90deg,
     rgba(46, 46, 46, 0.7),
     rgba(0, 255, 64, 0.705)
   );
 }
-.stat:nth-child(2) {
+.stat_info:nth-child(2) {
   background: linear-gradient(
     -90deg,
     rgba(46, 46, 46, 0.3),
@@ -290,6 +279,7 @@ h2 {
 
 .stat_container {
   width: 50%;
+  max-width: 50%;
   height: 4.5vh;
   display: flex;
   flex-direction: row;
@@ -408,14 +398,12 @@ h2 {
 
 #discord_tab {
   background: radial-gradient(at top, rgba(0, 0, 0, 0.589), #332e72);
-  overflow: hidden;
-  position: relative; /* Ensures overflow applies to absolute children */
+  position: relative; 
 }
 
 #statistics_tab {
   background: radial-gradient(circle at top, #55a8926b, rgba(0, 0, 0, 0.589));
-  overflow: hidden;
-  position: relative; /* Ensures overflow applies to absolute children */
+  position: relative; 
 }
 
 #safezone_tab {
@@ -426,16 +414,6 @@ h2 {
   background: radial-gradient(circle at top, #411b6d, rgba(0, 0, 0, 0.589));
 }
 
-#gta_settings_tab {
-  background: radial-gradient(circle at top, #154d43, rgba(0, 0, 0, 0.589));
-}
-
-#safezone_tab {
-  background: radial-gradient(circle at top, #155074, rgba(0, 0, 0, 0.589));
-}
-#settings_tab {
-  background: radial-gradient(circle at top, #411b6d, rgba(0, 0, 0, 0.589));
-}
 #gta_settings_tab {
   background: radial-gradient(circle at top, #154d43, rgba(0, 0, 0, 0.589));
 }
