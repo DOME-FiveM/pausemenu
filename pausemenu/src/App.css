@@ -200,6 +200,7 @@ h2 {
     1;
 }
 
+
 .grid_item_desc {
   display: flex;
   flex-direction: column;
@@ -407,12 +408,23 @@ h2 {
   background: radial-gradient(circle at top, #154d43, rgba(0, 0, 0, 0.589));
 }
 
+#safezone_tab {
+  background: radial-gradient(circle at top, #155074, rgba(0, 0, 0, 0.589));
+}
+#settings_tab {
+  background: radial-gradient(circle at top, #411b6d, rgba(0, 0, 0, 0.589));
+}
+#gta_settings_tab {
+  background: radial-gradient(circle at top, #154d43, rgba(0, 0, 0, 0.589));
+}
 #report_tab {
   background: radial-gradient(circle at top, #771c1c, rgba(0, 0, 0, 0.589));
 }
 
 #shop_tab:hover,
 #join_discord:hover,
+#discord_tab:hover,
+#statistics_tab:hover,
 #safezone_tab:hover,
 #settings_tab:hover,
 #gta_settings_tab:hover,

@@ -2,15 +2,10 @@ import FiveM from "./FiveM";
 
 function GTASettings() {
   return (
-    <div 
-    onClick={() => FiveM({
-      id: "gta_settings",
-      label: "GTA Settings",
-    })}
-    id="gta_settings_tab" className="grid_item grid_bottom">
-      <div className="top_icon_trans">
-        <div>
-          <svg
+    <div id="gta_settings_tab" className="grid_item grid_bottom">
+                  <div className="top_icon_trans">
+       <div>
+       <svg
             width={375}
             height={375}
             viewBox="0 0 43 44"

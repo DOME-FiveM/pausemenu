@@ -1,0 +1,15 @@
+- If the text in a stat wants to wrap around, we need to force it to justify-content: flex-start/start otherwise justify-content: center
+- Make the sub-grid fit as much as possible so we can gap them nicely
+
+
+- Create a FiveM function?
+
+- Could the functioniality be a command for ease? 
+- Safezone - yes, /leavelobby or /leave
+- Settings - yes, /settings
+- GTA Settings - yes /gtasettings
+- Report - yes /report
+- Shop - yes /shop
+
+- Would we want it to be an event or command?
+"stadium:ui:enterShop" -- > 
