@@ -11,7 +11,7 @@ function Discord() {
           </div>
 
           {/* user name  */}
-          <div className="a_stat">
+          <div className="a_stat username">
             <div className="stat_container">
               <div className="spacer"></div>
               <h1>User Name</h1>
