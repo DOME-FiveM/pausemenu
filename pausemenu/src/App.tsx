@@ -1,6 +1,8 @@
+// Import CSS
 import "./App.css";
 import "./Scrollbar.css";
 
+// Import Modules
 import Report from "./Report";
 import GTASettings from "./GTASettings";
 import Settings from "./Settings";

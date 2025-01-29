@@ -15,7 +15,7 @@ function Settings() {
         </div>
       </div>
 
-      <div className="a_tab">
+      <div className="grid_item_content">
         <div className="icon_background settings_icon_background">
           <div className="icon settings_icon">
             <svg
@@ -29,7 +29,7 @@ function Settings() {
             </svg>
           </div>
         </div>
-        <div className="tab_desc">
+        <div className="grid_item_desc">
           <h1>Settings</h1>
           <h2>Adjust your Stadium settings</h2>
         </div>
