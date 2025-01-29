@@ -1,12 +1,9 @@
-// Import required React stuff
-import { StrictMode } from "react";
+import { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
-// Import CSS
 import "./App.css";
 import "./Scrollbar.css";
 
-// Import Modules
 import Report from "./Report";
 import GTASettings from "./GTASettings";
 import Settings from "./Settings";
@@ -15,8 +12,26 @@ import Discord from "./Discord";
 import Shop from "./Shop";
 
 function App() {
+  const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    const handleHideUI = (event : any) => {
+      if (event.data === "hideui") {
+        console.log("Hiding UI")
+        setHidden(true);
+      }
+      else if (event.data === "showui") {
+        console.log("Showing UI")
+        setHidden(false);
+      }
+    };
+
+    window.addEventListener("message", handleHideUI);
+    return () => window.removeEventListener("message", handleHideUI);
+  }, []);
+
   return (
-    <div className="grid_container">
+    <div className="grid_container" style={{ display: hidden ? "none" : "grid" }}>
       <Shop />
       <Discord />
       <Safezone />
