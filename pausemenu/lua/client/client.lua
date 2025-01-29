@@ -60,3 +60,37 @@ RegisterNUICallback("doLuaAction", function(data, cb)
     end
     ExecuteCommand("closeui")
 end)
+
+
+
+CreateThread(function()
+    while true do
+        Wait(5000)
+        print("Updating stats")
+
+        -- Do server call back
+        local data = lib.callback.await("stadium:ui:getStatistics", false)
+
+       -- local data = { -- We are expecting this data
+        --     username = "Jay",
+        --     id = 2,
+        --     playtime = 40,
+        --     kills = 40,
+        -- }
+
+        assert(data)
+
+        if next(data) then
+            print("We have DATA!")
+        end
+
+        SendNUIMessage({
+            type = "updateStats",
+            username = data.username,
+            id = data.id,
+            playtime = data.playtime,
+            kills = data.kills,
+        })
+
+    end
+end)
