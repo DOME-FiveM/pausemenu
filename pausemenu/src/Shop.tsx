@@ -1,6 +1,13 @@
+import FiveM from "./FiveM";
+
 function Shop() {
   return (
-    <div id="shop_tab" className="grid_item grid_top">
+    <div 
+    onClick={() => FiveM({
+      id: "shop", // store
+      label: "Shop", // Store
+    })}
+    id="shop_tab" className="grid_item grid_top">
       {/* <div className="top_icon_trans">
         <div>
           <svg

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: Arame;
+  src: url("/public/ArameMonoBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   text-transform: uppercase;
@@ -6,6 +13,7 @@
   text-align: center;
   color: white;
   scroll-behavior: smooth;
+  font-family: Arame, Roboto;
 }
 
 #root {
@@ -13,12 +21,23 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
+  background: radial-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 0.4)
+  ),
+  url("./public/overlay.png");
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: difference; /* You can try overlay, darken, etc. */
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --item-width: 410px;
+  --global-gap: 10px;
 }
 
 body {
@@ -45,15 +64,15 @@ h2 {
 .grid_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: var(--global-gap);
 }
 
 .grid_item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
   border-radius: 5px;
+  width: var(--item-width);
 }
 
 .grid_item_content {
@@ -81,27 +100,25 @@ h2 {
   background-color: #7e7e7e;
   text-align: center;
   border-radius: 5px;
-  width: 350px;
-  overflow: hidden;
   padding: 18px;
-  width: 400px;
-  height: 280px;
-  gap: 5px;
+  gap: var(--global-gap);
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
 }
 
 .split_grid_bottom {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
   background-color: #7e7e7e;
-  padding: 20px;
   text-align: center;
   border-radius: 5px;
   overflow: hidden;
   padding: 25px;
-  width: 400px;
-  height: 210px;
+  width: 100%;
+  height: 50%;
 }
 
 .icon {
@@ -204,21 +221,26 @@ h2 {
 .grid_item_desc {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--global-gap);
   margin-bottom: 15px;
 }
 
 .stats_title {
   display: flex;
-  gap: 15px;
+  gap: 5px;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+  /* text-wrap: nowrap; */
 }
 
 .split_grid_spacer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
 }
 
 .a_stat {
@@ -292,12 +314,12 @@ h2 {
 }
 
 .discord_link {
-  background-color: rgba(46, 46, 46, 0.29);
+  background-color: rgba(24, 24, 24, 0.45);
   border-radius: 3px;
   padding: 12px;
   width: 100%;
   display: flex;
-  gap: 10px;
+  gap: var(--global-gap);
   text-align: center;
   display: flex;
   align-items: center;
@@ -306,8 +328,8 @@ h2 {
   width: 25px;
   height: 25px;
   rotate: 90deg;
-  fill: rgba(191, 191, 191, 0.75);
-  background-color: rgba(128, 128, 128, 0.55);
+  fill: rgba(255, 255, 255, 0.75);
+  background-color: rgba(82, 82, 82, 0.63);
   padding: 4px;
   border-radius: 5px;
 }
@@ -353,22 +375,22 @@ h2 {
 }
 
 .discord_logo {
-  width: 200px;
-  height: 200px;
   position: absolute;
+  width: 200px;
+  height: auto;
   margin-left: 250px;
-  margin-top: -5px;
+  margin-top: 5px;
   rotate: 20deg;
   opacity: 0.9;
 }
 .discord_logo:last-child {
-  width: 200px;
-  height: 200px;
   position: absolute;
-  margin-left: -90px;
-  margin-top: -140px;
-  rotate: 340deg;
-  opacity: 0.4;
+  width: 220px;
+  height: auto;
+  margin-left: -85px;
+  margin-top: -165px;
+  rotate: -21deg;
+  opacity: 0.5;
 }
 
 /* IDS  */
@@ -422,12 +444,13 @@ h2 {
 }
 
 #shop_tab:hover,
-#join_discord:hover,
-#discord_tab:hover,
-#statistics_tab:hover,
 #safezone_tab:hover,
 #settings_tab:hover,
 #gta_settings_tab:hover,
 #report_tab:hover {
   scale: 1.02;
+}
+
+.join_discord:hover {
+  filter: brightness(0.85);
 }
