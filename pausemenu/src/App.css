@@ -21,16 +21,6 @@
 }
 
 :root {
-  /* color-scheme: light dark; */
-  background: radial-gradient(
-    rgba(0, 0, 0, 0.8),
-    rgba(255, 255, 255, 0.4)
-  ),
-  url("./public/overlay.png");
-  background-position: center;
-  background-size: contain;
-  background-blend-mode: difference; /* You can try overlay, darken, etc. */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +38,6 @@ body {
   min-height: 100vh;
 }
 
-
 h1 {
   margin: 0;
   font-size: 24px;
@@ -65,6 +54,31 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--global-gap);
+}
+
+.background {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+
+  /* color-scheme: light dark; */
+  background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4)),
+    url("./public/overlay.png");
+  background-position: center;
+  background-size: contain;
+  background-blend-mode: difference; /* You can try overlay, darken, etc. */
+  width: 100vw;
+  height: 100vh;
+  z-index: -100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease;
 }
 
 .grid_item {
@@ -215,7 +229,6 @@ h2 {
     )
     1;
 }
-
 
 .grid_item_desc {
   display: flex;
@@ -398,16 +411,20 @@ h2 {
 
 #discord_tab {
   background: radial-gradient(at top, rgba(0, 0, 0, 0.589), #332e72);
-  position: relative; 
+  position: relative;
 }
 
 #statistics_tab {
   background: radial-gradient(circle at top, #55a8926b, rgba(0, 0, 0, 0.589));
-  position: relative; 
+  position: relative;
 }
 
 #safezone_tab {
-  background: radial-gradient(circle at top, rgb(27, 84, 145), rgba(0, 0, 0, 0.589));
+  background: radial-gradient(
+    circle at top,
+    rgb(27, 84, 145),
+    rgba(0, 0, 0, 0.589)
+  );
 }
 
 #settings_tab {

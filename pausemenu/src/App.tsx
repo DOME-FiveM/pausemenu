@@ -12,32 +12,49 @@ import Discord from "./Discord";
 import Shop from "./Shop";
 
 function App() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
-    const handleHideUI = (event : any) => {
+    const handleHideUI = (event: any) => {
       if (event.data === "hideui") {
-        console.log("Hiding UI")
+        console.log("Hiding UI");
         setHidden(true);
-      }
-      else if (event.data === "showui") {
-        console.log("Showing UI")
+      } else if (event.data === "showui") {
+        console.log("Showing UI");
         setHidden(false);
+      } else 
+      {
+        console.error("Ooops, what u tryna do...");
       }
     };
 
-    window.addEventListener("message", handleHideUI);
-    return () => window.removeEventListener("message", handleHideUI);
+    const handleKeyUp = (event: any) => {
+      if (event.key === "Escape") {
+        setHidden(true);
+      }
+    }
+
+    function removeEventListeners()
+    {
+      window.removeEventListener("message", handleHideUI)
+      window.removeEventListener("keyup", handleKeyUp)
+    }
+
+    window.addEventListener("keyup", handleKeyUp); // THIS ADDS THE EVENT LISTENER
+    window.addEventListener("message", handleHideUI); // THIS ADDS THE EVENT LISTENER
+    return () => removeEventListeners(); // THIS REMOVES THE EVENT LISTENERs ON CLEANUP
   }, []);
 
   return (
-    <div className="grid_container" style={{ display: hidden ? "none" : "grid" }}>
-      <Shop />
-      <Discord />
-      <Safezone />
-      <Settings />
-      <GTASettings />
-      <Report />
+    <div className={`background ${hidden ? "" : "visible"}`}>
+      <div className="grid_container">
+        <Shop />
+        <Discord />
+        <Safezone />
+        <Settings />
+        <GTASettings />
+        <Report />
+      </div>
     </div>
   );
 }
