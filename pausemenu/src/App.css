@@ -47,6 +47,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 .grid_bottom {
@@ -112,7 +113,6 @@ h2 {
 #settings_tab {
   background: radial-gradient(circle at top, #411b6d, rgba(0, 0, 0, 0.589));
 }
-
 #gta_settings_tab {
   background: radial-gradient(circle at top,  #154d43, rgba(0, 0, 0, 0.589));
 }
@@ -120,6 +120,9 @@ h2 {
   background: radial-gradient(circle at top, #771c1c, rgba(0, 0, 0, 0.589));
 }
 
+#shop_tab:hover, #discord_tab:hover, #statistics_tab:hover, #safezone_tab:hover, #settings_tab:hover, #gta_settings_tab:hover, #report_tab:hover {
+  scale: 1.02;
+}
 
 .icon {
   background-color: rgb(255, 255, 255);
