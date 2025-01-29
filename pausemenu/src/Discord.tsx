@@ -1,43 +1,54 @@
+import DiscordLogo from "/DiscordLogo.png";
+
 function Discord() {
   return (
     <>
       <div className="split_grid_spacer">
-        <div id="discord_tab" className="split_grid_top">
+        <div id="statistics_tab" className="split_grid_top">
           <div className="stats_desc">
             <h1>Statistics</h1>
             <h2>Your stats in Season 1 of Stadium</h2>
           </div>
+
+          {/* user name  */}
           <div className="a_stat">
-            <div className="spacer"></div>
-            <h1 className="stat">User Name</h1>
-            <h1 className="stat">SueSmells</h1>
+            <div className="stat_container">
+              <div className="spacer"></div>
+              <h1>User Name</h1>
+            </div>
+            <h1 className="stat">A RealYL LONG NAME ADADA</h1>
+          </div>
+
+          {/* account id */}
+          <div className="a_stat">
+            <div className="stat_container">
+              <div className="spacer"></div>
+              <h1>Account ID</h1>
+            </div>
+            <h1 className="stat">0</h1>
           </div>
 
           <div className="a_stat">
-            <div className="spacer"></div>
-            <h1 className="stat">Account ID</h1>
-            <h1 className="stat">3313</h1>
+            <div className="stat_container">
+              <div className="spacer"></div>
+              <h1>Play Time</h1>
+            </div>
+            <h1 className="stat">0h</h1>
           </div>
 
           <div className="a_stat">
-            <div className="spacer"></div>
-            <h1 className="stat">Play Time</h1>
-            <h1 className="stat">342m</h1>
+            <div className="stat_container">
+              <div className="spacer"></div>
+              <h1>Kills</h1>
+            </div>
+            <h1 className="stat">0</h1>
           </div>
 
-          <div className="a_stat">
-            <div className="spacer"></div>
-            <h1 className="stat">Kills</h1>
-            <h1 className="stat">76</h1>
-          </div>
         </div>
         <div id="discord_tab" className="split_grid_bottom">
           <div className="tab_desc">
             <h1>Our Discord</h1>
             <h2>Join our official Discord server</h2>
-          </div>
-          <div>
-            
           </div>
           <div className="discord_stuff">
             <div className="discord_link">
@@ -49,6 +60,8 @@ function Discord() {
             <div className="join_discord">
               <h1>Join Discord</h1>
             </div>
+            <img className="discord_logo" src={DiscordLogo} alt="" />
+            <img className="discord_logo" src={DiscordLogo} alt="" />
           </div>
         </div>
       </div>
