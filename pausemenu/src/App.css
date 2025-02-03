@@ -87,6 +87,8 @@ h2 {
   align-items: center;
   border-radius: 5px;
   width: var(--item-width);
+  overflow: hidden;
+  position: relative;
 }
 
 .grid_item_content {
@@ -360,12 +362,16 @@ h2 {
 .top_icon_trans {
   position: absolute;
   opacity: 0.1;
-  overflow: hidden;
 }
 .top_icon_trans > div {
-  position: static;
-  margin-top: -14vh;
+  position: relative;
+  transform: translateY(-14vh); /* Initial position */
+  transform-origin: center center;
+  transition: transform 5.5s all; /* Ensures smooth animation */
+  
 }
+
+
 
 .top_icon_trans_safezone {
   position: absolute;
@@ -375,6 +381,7 @@ h2 {
 .top_icon_trans_safezone > div {
   position: static;
   margin-top: -10vh;
+  transition: transform 0.5s ease; /* Ensures smooth animation */
 }
 
 .discord_logo {
@@ -448,4 +455,18 @@ h2 {
 
 .join_discord:hover {
   filter: brightness(0.85);
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.grid_item:hover .top_icon_trans > div,
+.grid_item:hover .top_icon_trans_safezone > div
+ {
+  animation: spin 1.5s linear infinite; /* Spins continuously */
+  top: -7vh;
+  scale: 0.9;
 }

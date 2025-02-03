@@ -12,7 +12,7 @@ import Discord from "./Discord";
 import Shop from "./Shop";
 
 function App() {
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     const handleUIUpdates = (event: any) => {
