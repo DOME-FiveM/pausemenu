@@ -1,19 +1,25 @@
 import FiveM from "./FiveM";
 
-function Settings() {
+function Settings({setHidden}) {
+  function handlePress()
+  {
+    FiveM({
+      id: "settings", 
+      label: "Settings", 
+    });
+    setHidden(true);
+  }
+
   return (
     <div
       onClick={() =>
-        FiveM({
-          id: "settings",
-          label: "Settings",
-        })
+        handlePress()
       }
       id="settings_tab"
       className="grid_item grid_bottom"
     >
       <div className="top_icon_trans">
-        <div>
+        <div id="settings_cog">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="white"

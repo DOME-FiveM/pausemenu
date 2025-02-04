@@ -1,15 +1,15 @@
 import { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
-import "./App.css";
-import "./Scrollbar.css";
+import "./css/App.css";
+import "./css/Scrollbar.css";
 
-import Report from "./Report";
-import GTASettings from "./GTASettings";
-import Settings from "./Settings";
-import Safezone from "./Safezone";
-import Discord from "./Discord";
-import Shop from "./Shop";
+import Report from "./Components/Report";
+import GTASettings from "./Components/GTASettings";
+import Settings from "./Components/Settings";
+import Safezone from "./Components/Safezone";
+import Discord from "./Components/Discord";
+import Shop from "./Components/Shop";
 
 function App() {
   const [hidden, setHidden] = useState(false);
@@ -51,7 +51,7 @@ function App() {
 
     const handleKeyUp = (event: any) => {
       if (event.key === "Escape") {
-        setHidden(true);
+        setHidden((hidden) => !hidden);
       }
     };
 
@@ -71,12 +71,12 @@ function App() {
     <div className={`background ${hidden ? "" : "visible"}`}>
       {!hidden && (
         <div className="grid_container">
-          <Shop />
-          <Discord />
-          <Safezone />
-          <Settings />
-          <GTASettings />
-          <Report />
+          <Shop setHidden ={setHidden} />
+          <Discord setHidden ={setHidden} />
+          <Safezone setHidden ={setHidden} />
+          <Settings setHidden ={setHidden} />
+          <GTASettings setHidden ={setHidden} />
+          <Report setHidden ={setHidden} />
         </div>
       )}
     </div>

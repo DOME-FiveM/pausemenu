@@ -1,9 +1,18 @@
-import Statistics from "./Statistics";
+import Statistics from "../Statistics";
 import DiscordLogo from "/DiscordLogo.png";
 import FiveM from "./FiveM";
-import config from "./config.json";
+import config from "../config.json";
 
-function Discord() {
+function Discord({setHidden}) {
+  function handlePress()
+  {
+    FiveM({
+      id: "discord", 
+      label: "Discord", 
+    });
+    setHidden(true);
+  }
+
   function removeHTTP(url: string): string {
     return url.replace(/^https?:\/\//, "");
   }
@@ -24,11 +33,7 @@ function Discord() {
             <h1>{removeHTTP(config.discordLink)}</h1>
           </div>
           <div 
-          onClick={() => FiveM({
-            id: "discord",
-            label: "Discord",
-            link: config.discordLink,
-          })}
+          onClick={() => handlePress()}
           className="join_discord">
             <h1>Join Discord</h1>
           </div>

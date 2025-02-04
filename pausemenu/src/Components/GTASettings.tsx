@@ -1,12 +1,18 @@
 import FiveM from "./FiveM";
 
-function GTASettings() {
+function GTASettings({setHidden}) {
+  function handlePress()
+  {
+    FiveM({
+      id: "gta_settings", 
+      label: "GTA Settings", 
+    });
+    setHidden(true);
+  }
+  
   return (
     <div 
-    onClick={() => FiveM({
-      id: "gta_settings",
-      label: "GTA Settings",
-    })}
+    onClick={() => handlePress()}
     id="gta_settings_tab" className="grid_item grid_bottom">
       <div className="top_icon_trans">
         <div>

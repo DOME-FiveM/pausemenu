@@ -1,12 +1,18 @@
 import FiveM from "./FiveM";
 
-function Shop() {
+function Shop({setHidden}) {
+  function handlePress()
+  {
+    FiveM({
+      id: "shop", 
+      label: "Shop", 
+    });
+    setHidden(true);
+  }
+
   return (
     <div 
-    onClick={() => FiveM({
-      id: "shop", // store
-      label: "Shop", // Store
-    })}
+    onClick={() => handlePress()}
     id="shop_tab" className="grid_item grid_top">
       {/* <div className="top_icon_trans">
         <div>

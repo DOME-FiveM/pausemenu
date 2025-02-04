@@ -1,15 +1,21 @@
 import FiveM from "./FiveM";
 
-function Safezone() {
+function Safezone({setHidden}) {
+  function handlePress()
+  {
+    FiveM({
+      id: "safezone", 
+      label: "Safezone", 
+    });
+    setHidden(true);
+  }
+
   return (
     <div 
-    onClick={() => FiveM({
-      id: "safezone",
-      label: "Safezone",
-    })}
+    onClick={() => handlePress()}
     id="safezone_tab" className="grid_item grid_top">
-      <div className="top_icon_trans_safezone">
-        <div>
+      <div className="top_icon_trans">
+        <div id="safezone_trans">
           <svg
             width={375}
             height={375}

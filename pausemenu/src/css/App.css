@@ -347,8 +347,10 @@ h2 {
   border-radius: 3px;
   padding-block: 8px;
   width: 100%;
+  cursor: pointer;
 }
 .join_discord > h1 {
+  cursor: pointer;
   font-size: 15px;
 }
 
@@ -368,20 +370,18 @@ h2 {
   transform: translateY(-14vh); /* Initial position */
   transform-origin: center center;
   transition: transform 5.5s all; /* Ensures smooth animation */
-  
 }
-
-
 
 .top_icon_trans_safezone {
   position: absolute;
   opacity: 0.1;
   overflow: hidden;
+  transition: transform 7.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
 }
 .top_icon_trans_safezone > div {
   position: static;
   margin-top: -10vh;
-  transition: transform 0.5s ease; /* Ensures smooth animation */
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, top 0.6s ease-in-out;
 }
 
 .discord_logo {
@@ -392,6 +392,8 @@ h2 {
   margin-top: 5px;
   rotate: 20deg;
   opacity: 0.9;
+  transition: all 0.3s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 .discord_logo:last-child {
   position: absolute;
@@ -400,17 +402,19 @@ h2 {
   margin-left: -85px;
   margin-top: -165px;
   rotate: -21deg;
-  opacity: 0.5;
+  opacity: 0.8;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+.split_grid_bottom:hover .discord_logo:nth-child(3) {
+  transform: translate(-25px, -25px) scale(1.1) rotate(5deg);
 }
 
+.split_grid_bottom:hover .discord_logo:nth-child(4) {
+  transform: translate(10px, 5px) scale(0.9) rotate(-8deg);
+}
 /* IDS  */
 #shop_tab {
-  background: radial-gradient(
-      at top,
-      rgba(0, 0, 0, 0.589),
-      rgba(192, 32, 21, 0.568)
-    ),
-    url("https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/04/gta-5-fivem-player-count.jpg");
+  background: radial-gradient( at top, rgba(0, 0, 0, 0.61), rgba(192, 32, 21, 0.568) ), url("https://www.pcgamesn.com/wp-content/sites/pcgamesn/2021/04/gta-5-fivem-player-count.jpg");
   background-position: left;
   background-size: cover;
   background-blend-mode: multiply; /* You can try overlay, darken, etc. */
@@ -422,27 +426,23 @@ h2 {
 }
 
 #statistics_tab {
-  background: radial-gradient(circle at top, #55a8926b, rgba(0, 0, 0, 0.589));
+  background: radial-gradient(circle at top, #2c475f, rgba(0, 0, 0, 0.589));
   position: relative;
 }
 
 #safezone_tab {
-  background: radial-gradient(
-    circle at top,
-    rgb(27, 84, 145),
-    rgba(0, 0, 0, 0.589)
-  );
+  background: radial-gradient( circle at top, rgb(27, 84, 145), rgba(1, 0, 19, 0.81) );
 }
 
 #settings_tab {
-  background: radial-gradient(circle at top, #411b6d, rgba(0, 0, 0, 0.589));
+  background: radial-gradient(circle at top, #411b6d, rgba(47, 0, 57, 0.87));
 }
 
 #gta_settings_tab {
-  background: radial-gradient(circle at top, #154d43, rgba(0, 0, 0, 0.589));
+  background: radial-gradient(circle at top, #154d43, rgba(0, 25, 12, 0.77));
 }
 #report_tab {
-  background: radial-gradient(circle at top, #771c1c, rgba(0, 0, 0, 0.589));
+  background: radial-gradient(circle at top, #8c1e1e, rgba(32, 5, 5, 0.84));
 }
 
 #shop_tab:hover,
@@ -457,16 +457,56 @@ h2 {
   filter: brightness(0.85);
 }
 
-
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.grid_item:hover .top_icon_trans > div,
-.grid_item:hover .top_icon_trans_safezone > div
- {
-  animation: spin 1.5s linear infinite; /* Spins continuously */
-  top: -7vh;
-  scale: 0.9;
+@keyframes wobbleSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
+
+.grid_item:hover #settings_cog {
+  animation: spin 10s linear infinite !important; /* Spins continuously */
+  top: -14vh; /* Initial position */
+}
+
+.grid_item:hover #safezone_trans {
+  animation: bounce 1s ease-in-out infinite alternate;
+  top: -14vh; /* Initial position */
+}
+
+.grid_item:hover .top_icon_trans > div {
+  animation: wobbleSpin 5s linear infinite; /* Spins continuously */
+  top: -14vh; /* Initial position */
+}
+
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(2vh);
+  }
+}
+
