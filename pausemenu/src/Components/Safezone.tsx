@@ -1,10 +1,11 @@
 import FiveM from "./FiveM";
 
-function Safezone({setHidden}) {
+function Safezone({setHidden}:any) {
   function handlePress()
   {
     FiveM({
       id: "safezone", 
+      link: "",
       label: "Safezone", 
     });
     setHidden(true);

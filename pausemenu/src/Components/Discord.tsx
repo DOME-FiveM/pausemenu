@@ -3,11 +3,12 @@ import DiscordLogo from "/DiscordLogo.png";
 import FiveM from "./FiveM";
 import config from "../config.json";
 
-function Discord({setHidden}) {
+function Discord({setHidden}:any) {
   function handlePress()
   {
     FiveM({
       id: "discord", 
+      link: "",
       label: "Discord", 
     });
     setHidden(true);

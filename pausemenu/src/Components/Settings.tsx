@@ -1,10 +1,11 @@
 import FiveM from "./FiveM";
 
-function Settings({setHidden}) {
+function Settings({setHidden}:any) {
   function handlePress()
   {
     FiveM({
       id: "settings", 
+      link: "",
       label: "Settings", 
     });
     setHidden(true);

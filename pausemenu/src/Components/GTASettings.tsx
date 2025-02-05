@@ -1,10 +1,11 @@
 import FiveM from "./FiveM";
 
-function GTASettings({setHidden}) {
+function GTASettings({setHidden}:any) {
   function handlePress()
   {
     FiveM({
       id: "gta_settings", 
+      link: "",
       label: "GTA Settings", 
     });
     setHidden(true);

@@ -1,6 +1,6 @@
 @font-face {
   font-family: Arame;
-  src: url("/public/ArameMonoBold.ttf") format("truetype");
+  src: url("/ArameMonoBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -63,7 +63,7 @@ h2 {
 
   /* color-scheme: light dark; */
   background: radial-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.4)),
-    url("./public/overlay.png");
+    url("./overlay.png");
   background-position: center;
   background-size: contain;
   background-blend-mode: difference; /* You can try overlay, darken, etc. */

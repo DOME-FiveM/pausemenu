@@ -10,9 +10,10 @@ import Settings from "./Components/Settings";
 import Safezone from "./Components/Safezone";
 import Discord from "./Components/Discord";
 import Shop from "./Components/Shop";
+import FiveM from "./Components/FiveM";
 
 function App() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
     const handleUIUpdates = (event: any) => {
@@ -52,6 +53,11 @@ function App() {
     const handleKeyUp = (event: any) => {
       if (event.key === "Escape") {
         setHidden((hidden) => !hidden);
+        FiveM({
+          id: "escape_button",
+          label: "escape_button",
+          link: "",
+        })
       }
     };
 

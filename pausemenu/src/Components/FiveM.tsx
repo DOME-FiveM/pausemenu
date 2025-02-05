@@ -6,15 +6,22 @@ interface Button {
   label: string;
 }
 
+interface CustomWindow extends Window {
+  invokeNative?: (method: string, url: string) => void;
+}
+
+declare const window: CustomWindow;
+
 function handleDiscordJoin(button: Button) {
   if (button.link != null && button.id === "discord") {
     console.log("Link: " + button.link);
     console.log("Opening Discord In Browser");
 
     if (isEnvBrowser()) {
-      // In regular browser?
+      // In a regular browser
       window.open(button.link, "_blank");
-    } else {
+    } else if (typeof window.invokeNative === "function") {
+      // In an environment where invokeNative is available
       window.invokeNative("openUrl", button.link);
     }
   }
